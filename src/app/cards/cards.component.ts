@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class CardsComponent implements OnInit {
 
   type: string;
+  p1;
+  p2;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -18,6 +20,14 @@ export class CardsComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.type = params['type'];
+
+      this.p1 = params['p1'];
+      this.p2 = params['p2'];
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.p1 = params['p1'];
+      this.p2 = params['p2'];
     });
 
   }
