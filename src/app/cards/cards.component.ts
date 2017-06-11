@@ -14,12 +14,15 @@ export class CardsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.type = this.route.snapshot.params['type'];
+    // this.type = this.route.snapshot.params['type'];
 
-    // this.route.params.subscribe(params => {
-    //   this.type = params['type'];
-    // });
+    this.route.params.subscribe(params => {
+      this.type = params['type'];
+    });
 
   }
 
+  goCards(num) {
+    this.router.navigate(['/', 'cards', parseInt(this.type) + num]);
+  }
 }
