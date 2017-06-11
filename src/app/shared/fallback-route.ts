@@ -2,6 +2,6 @@ import { Route } from '@angular/router';
 
 export const fallbackRoute: Route = {
   path: '**',
-  redirectTo: '/page1',
+  redirectTo: '/dashboard',
   pathMatch: 'full'
 };
