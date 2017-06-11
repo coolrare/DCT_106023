@@ -3,7 +3,6 @@ import { Routes,  RouterModule } from '@angular/router';
 import { fallbackRoute } from './shared/fallback-route';
 import { CardsComponent } from './cards/cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FlotComponent } from './charts/flot/flot.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
