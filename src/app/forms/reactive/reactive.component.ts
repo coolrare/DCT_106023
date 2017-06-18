@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators, NgForm, AbstractControl } from '@angular/forms';
+import { ValidateSubtitle } from "app/shared/validate-length";
 
 @Component({
   selector: 'app-reactive',
@@ -21,7 +22,10 @@ export class ReactiveComponent implements OnInit {
       ]
       ],
       'metadata': this.fb.group({
-        'subtitle': 'Hello'
+        'subtitle': ['Hello', [
+            Validators.required, ValidateSubtitle
+          ]
+        ]
       }),
       'addresses': this.fb.array([
         this.fb.control('Address 1'),
