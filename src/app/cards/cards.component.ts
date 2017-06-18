@@ -43,4 +43,10 @@ export class CardsComponent implements OnInit {
   goCards(num) {
     this.router.navigate(['/', 'cards', parseInt(this.type) + num]);
   }
+
+  plus1(btn: HTMLButtonElement) {
+    let num = +btn.innerText;
+    num++;
+    btn.innerText = num.toString();
+  }
 }
