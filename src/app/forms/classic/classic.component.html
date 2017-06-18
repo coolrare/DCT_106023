@@ -69,16 +69,21 @@ mSubtitle.errors = {{ mSubtitle['errors'] | json }}</pre>
 
 </div>
 
-          <button type="submit">送出表單</button>
-
-          <fieldset>
+          <fieldset ngModelGroup="address" *ngFor="let addr of addresses; let i=index">
             <div class="form-group">
-              <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
+              <label for="input-id-1" class="col-sm-2 control-label">
+                地址 {{ i+1 }}
+              </label>
               <div class="col-sm-10">
-                <input id="input-id-1" type="text" class="form-control">
+                <input id="input-id-1" type="text" class="form-control"
+                  [name]="'address'+i" [(ngModel)]="data.addresses[i]" required>
               </div>
             </div>
           </fieldset>
+
+
+          <button type="submit">送出表單</button>
+
           <fieldset>
             <div class="form-group">
               <label class="col-sm-2 control-label">Password</label>

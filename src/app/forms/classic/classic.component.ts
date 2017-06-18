@@ -10,12 +10,21 @@ export class ClassicComponent implements OnInit {
 
   data: any = {};
 
+  addresses: any[] = [
+    '',
+    ''
+  ];
+
   constructor() { }
 
   ngOnInit() {
     this.data = {
       'title': 'This is title',
-      'subtitle': 'Hello World'
+      'subtitle': 'Hello World',
+      'addresses': [
+        'Address 1',
+        'Address 2'
+      ]
     };
   }
 
