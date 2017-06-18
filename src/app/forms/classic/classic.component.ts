@@ -28,7 +28,7 @@ export class ClassicComponent implements OnInit {
   }
 
   checkValid(field, form) {
-    return form['submitted'] && field['touched'] && field['invalid']
+    return (form['submitted'] || field['touched']) && field['invalid']
   }
 
 }
