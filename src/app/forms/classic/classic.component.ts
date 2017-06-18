@@ -23,8 +23,12 @@ export class ClassicComponent implements OnInit {
     console.log(form);
     console.log($event);
     if (form.invalid) {
-      alert('表單無效，請檢查欄位!');
+      alert('表單無效，請檢查欄位!')
     }
+  }
+
+  checkValid(field, form) {
+    return form['submitted'] && field['touched'] && field['invalid']
   }
 
 }
