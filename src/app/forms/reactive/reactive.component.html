@@ -13,7 +13,8 @@ form.value = {{ form['value'] | json }}</pre>
               </label>
               <div class="col-sm-10">
                 <input type="text" class="form-control rounded"
-                  formControlName="title">
+                  formControlName="title"
+                  (click)="form.get('title').disable()">
                 <span class="help-block">
                   <span *ngIf="form.get('title')['errors']?.required">請輸入標題</span>
 <pre>form.get('title').value = {{ form.get('title')['value'] }}
@@ -37,7 +38,8 @@ form.get('title').errors = {{ form.get('title')['errors'] | json }}</pre>
               </label>
               <div class="col-sm-10">
                 <input type="text" class="form-control"
-                  formControlName="subtitle">
+                  formControlName="subtitle"
+                  (click)="form.get('metadata.subtitle').disable()">
                 <span class="help-block">
 
                 </span>
@@ -54,6 +56,7 @@ form.get('title').errors = {{ form.get('title')['errors'] | json }}</pre>
               </label>
               <div class="col-sm-10">
                 <input id="input-id-1" type="text" class="form-control"
+                  (click)="form.get('addresses.'+i).disable()"
                   [formControlName]="i" (keyup.enter)="addNewAddress()">
               </div>
             </div>
