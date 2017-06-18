@@ -1,13 +1,15 @@
 <section>
   <div class="container-fluid">
     <h5 class="mt0">Classic form controls and custom variants</h5>
-    <pre>data = {{ data | json }}</pre>
+    <pre>data = {{ data | json }}
+form.value = {{ form['value'] | json }}</pre>
     <div class="card">
       <div class="card-body">
-        <form method="get" action="/" class="form-horizontal">
+        <form class="form-horizontal"
+              #form="ngForm" (ngSubmit)="doSubmit(form, $event)">
           <fieldset>
             <div class="form-group"
-              [class.has-error]="mTitle['invalid']">
+              [class.has-error]="mTitle['touched'] && mTitle['invalid']">
               <label class="col-sm-2 control-label">
                 Title
               </label>
@@ -34,7 +36,7 @@ mTitle.erros = {{ mTitle['errors'] | json }}</pre>
           </fieldset>
           <fieldset>
             <div class="form-group"
-              [class.has-error]="mSubtitle['invalid']">
+              [class.has-error]="mSubtitle['touched'] && mSubtitle['invalid']">
               <label class="col-sm-2 control-label">
                 Subtitle
               </label>
@@ -59,6 +61,9 @@ mSubtitle.erros = {{ mSubtitle['errors'] | json }}</pre>
               </div>
             </div>
           </fieldset>
+
+          <button type="submit">送出表單</button>
+
           <fieldset>
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
