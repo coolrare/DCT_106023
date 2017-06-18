@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
 import { FlotCharts } from 'app/shared/init-flotcharts';
 
 @Component({
@@ -8,10 +8,24 @@ import { FlotCharts } from 'app/shared/init-flotcharts';
 })
 export class FlotComponent implements OnInit {
 
-  constructor() { }
+  title = '123';
+
+  constructor(private zone: NgZone, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
-    $(FlotCharts);
+    this.zone.runOutsideAngular(() => {
+      $(FlotCharts);
+
+      setTimeout(() => {
+        this.title = '456';
+        // this.cd.markForCheck();
+        this.cd.detectChanges();
+      }, 2000);
+
+    });
   }
 
+  debug() {
+    console.log(new Date());
+  }
 }
