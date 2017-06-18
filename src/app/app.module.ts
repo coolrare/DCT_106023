@@ -12,6 +12,7 @@ import { LoginGuard } from './login.guard';
 import { ClassicComponent } from './forms/classic/classic.component';
 import { ReactiveComponent } from './forms/reactive/reactive.component';
 import { BlockComponent } from './block/block.component';
+import { BtnNumberPlus1Directive } from './btn-number-plus1.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BlockComponent } from './block/block.component';
     LayoutComponent,
     ClassicComponent,
     ReactiveComponent,
-    BlockComponent
+    BlockComponent,
+    BtnNumberPlus1Directive
   ],
   imports: [
     BrowserModule,
