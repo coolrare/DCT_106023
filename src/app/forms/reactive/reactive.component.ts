@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormArray } from "@angular/forms";
 
 @Component({
   selector: 'app-reactive',
@@ -25,6 +25,14 @@ export class ReactiveComponent implements OnInit {
         this.fb.control('Address 2')
       ])
     });
+  }
+
+  addNewAddress() {
+    let addresses = this.form.get('addresses') as FormArray;
+
+    addresses.push(
+      this.fb.control('New Address')
+    );
   }
 
 }
