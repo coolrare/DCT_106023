@@ -5,9 +5,9 @@
 form.value = {{ form['value'] | json }}</pre>
     <div class="card">
       <div class="card-body">
-        <form class="form-horizontal" [formGroup]="form">
+        <form class="form-horizontal" [formGroup]="form" #f="ngForm">
           <fieldset>
-            <div class="form-group" [class.has-error]="form.get('title').invalid">
+            <div class="form-group" [class.has-error]="checkValid('title', f)">
               <label class="col-sm-2 control-label">
                 標題
               </label>
@@ -61,6 +61,7 @@ form.get('title').errors = {{ form.get('title')['errors'] | json }}</pre>
 
 </div>
 
+          <button type="submit">送出表單</button>
 
           <fieldset>
             <div class="form-group">
