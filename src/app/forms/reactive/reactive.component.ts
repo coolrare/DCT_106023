@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from "@angular/forms";
+import { FormBuilder, FormGroup, FormArray, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-reactive',
@@ -16,7 +16,10 @@ export class ReactiveComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      'title': 'This is title',
+      'title': ['This is title', [
+          Validators.required, Validators.minLength(3), Validators.maxLength(20)
+        ]
+      ],
       'metadata': this.fb.group({
         'subtitle': 'Hello'
       }),

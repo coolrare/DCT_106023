@@ -7,13 +7,26 @@ form.value = {{ form['value'] | json }}</pre>
       <div class="card-body">
         <form class="form-horizontal" [formGroup]="form">
           <fieldset>
-            <div class="form-group">
+            <div class="form-group" [class.has-error]="form.get('title').invalid">
               <label class="col-sm-2 control-label">
                 標題
               </label>
               <div class="col-sm-10">
                 <input type="text" class="form-control rounded"
                   formControlName="title">
+                <span class="help-block">
+                  <span *ngIf="form.get('title')['errors']?.required">請輸入標題</span>
+<pre>form.get('title').value = {{ form.get('title')['value'] }}
+form.get('title').valid = {{ form.get('title')['valid'] }}
+form.get('title').invalid = {{ form.get('title')['invalid'] }}
+form.get('title').dirty = {{ form.get('title')['dirty'] }}
+form.get('title').pristine = {{ form.get('title')['pristine'] }}
+form.get('title').touched = {{ form.get('title')['touched'] }}
+form.get('title').untouched = {{ form.get('title')['untouched'] }}
+form.get('title').enabled = {{ form.get('title')['enabled'] }}
+form.get('title').disabled = {{ form.get('title')['disabled'] }}
+form.get('title').errors = {{ form.get('title')['errors'] | json }}</pre>
+               </span>
               </div>
             </div>
           </fieldset>
