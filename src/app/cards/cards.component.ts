@@ -1,5 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BlockComponent } from '../block/block.component';
 
 @Component({
   selector: 'app-cards',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
+
+  @ViewChild(BlockComponent)
+  block: BlockComponent;
 
   type: string;
   p1;
@@ -30,6 +34,10 @@ export class CardsComponent implements OnInit {
       this.p2 = params['p2'];
     });
 
+  }
+
+  ngAfterViewInit() {
+    this.block.title = 'The Will Will Web';
   }
 
   goCards(num) {

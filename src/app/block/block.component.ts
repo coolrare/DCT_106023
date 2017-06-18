@@ -7,6 +7,8 @@ import { Component, OnInit, ElementRef, ContentChild } from '@angular/core';
 })
 export class BlockComponent implements OnInit {
 
+  title: string = 'Sky red';
+
   @ContentChild('btn')
   btn: ElementRef;
 
@@ -16,7 +18,9 @@ export class BlockComponent implements OnInit {
   }
 
   ngAfterContentInit() {
-    this.btn.nativeElement.innerHTML = '30';
+    if (this.btn) {
+      this.btn.nativeElement.innerHTML = '30';
+    }
   }
 
 }
