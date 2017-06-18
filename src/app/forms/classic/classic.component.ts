@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -14,6 +14,9 @@ export class ClassicComponent implements OnInit {
     '',
     ''
   ];
+
+  @ViewChild(NgForm)
+  form: NgForm;
 
   constructor() { }
 
@@ -36,8 +39,8 @@ export class ClassicComponent implements OnInit {
     }
   }
 
-  checkValid(field, form) {
-    return (form['submitted'] || field['touched']) && field['invalid']
+  checkValid(field) {
+    return (this.form['submitted'] || field['touched']) && field['invalid']
   }
 
 }

@@ -9,7 +9,7 @@ form.value = {{ form['value'] | json }}</pre>
               #form="ngForm" (ngSubmit)="doSubmit(form, $event)">
           <fieldset>
             <div class="form-group"
-              [class.has-error]="checkValid(mTitle, form)">
+              [class.has-error]="checkValid(mTitle)">
               <label class="col-sm-2 control-label">
                 Title
               </label>
