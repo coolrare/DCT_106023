@@ -34,7 +34,7 @@ form.value = {{ form['value'] | json }}</pre>
 
 <div formArrayName="addresses">
 
-          <fieldset *ngFor="let item of form.get('addresses').controls; let i=index">
+          <fieldset *ngFor="let item of form.get('addresses')['controls']; let i=index">
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">
                 Address {{ i+1 }}
