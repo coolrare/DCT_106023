@@ -34,6 +34,9 @@ mTitle.erros = {{ mTitle['errors'] | json }}</pre>
               </div>
             </div>
           </fieldset>
+
+<div ngModelGroup="metadata" #mMetadata="ngModelGroup">
+
           <fieldset>
             <div class="form-group"
               [class.has-error]="mSubtitle['touched'] && mSubtitle['invalid']">
@@ -61,6 +64,8 @@ mSubtitle.erros = {{ mSubtitle['errors'] | json }}</pre>
               </div>
             </div>
           </fieldset>
+
+</div>
 
           <button type="submit">送出表單</button>
 
