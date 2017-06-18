@@ -7,7 +7,7 @@
         <form method="get" action="/" class="form-horizontal">
           <fieldset>
             <div class="form-group"
-              [class.has-error]="mTitle.invalid">
+              [class.has-error]="mTitle['invalid']">
               <label class="col-sm-2 control-label">
                 Title
               </label>
@@ -18,23 +18,23 @@
                   #mTitle="ngModel"
                   class="form-control rounded">
                 <span class="help-block">
-<pre>mTitle.value = {{ mTitle.value }}
-mTitle.valid = {{ mTitle.valid }}
-mTitle.invalid = {{ mTitle.invalid }}
-mTitle.dirty = {{ mTitle.dirty }}
-mTitle.pristine = {{ mTitle.pristine }}
-mTitle.touched = {{ mTitle.touched }}
-mTitle.untouched = {{ mTitle.untouched }}
-mTitle.enabled = {{ mTitle.enabled }}
-mTitle.disabled = {{ mTitle.disabled }}
-mTitle.erros = {{ mTitle.errors | json }}</pre>
+<pre>mTitle.value = {{ mTitle['value'] }}
+mTitle.valid = {{ mTitle['valid'] }}
+mTitle.invalid = {{ mTitle['invalid'] }}
+mTitle.dirty = {{ mTitle['dirty'] }}
+mTitle.pristine = {{ mTitle['pristine'] }}
+mTitle.touched = {{ mTitle['touched'] }}
+mTitle.untouched = {{ mTitle['untouched'] }}
+mTitle.enabled = {{ mTitle['enabled'] }}
+mTitle.disabled = {{ mTitle['disabled'] }}
+mTitle.erros = {{ mTitle['errors'] | json }}</pre>
                </span>
               </div>
             </div>
           </fieldset>
           <fieldset>
             <div class="form-group"
-              [class.has-error]="mSubtitle.invalid">
+              [class.has-error]="mSubtitle['invalid']">
               <label class="col-sm-2 control-label">
                 Subtitle
               </label>
@@ -45,16 +45,16 @@ mTitle.erros = {{ mTitle.errors | json }}</pre>
                   #mSubtitle="ngModel"
                   class="form-control">
                 <span class="help-block">
-<pre>mSubtitle.value = {{ mSubtitle.value }}
-mSubtitle.valid = {{ mSubtitle.valid }}
-mSubtitle.invalid = {{ mSubtitle.invalid }}
-mSubtitle.dirty = {{ mSubtitle.dirty }}
-mSubtitle.pristine = {{ mSubtitle.pristine }}
-mSubtitle.touched = {{ mSubtitle.touched }}
-mSubtitle.untouched = {{ mSubtitle.untouched }}
-mSubtitle.enabled = {{ mSubtitle.enabled }}
-mSubtitle.disabled = {{ mSubtitle.disabled }}
-mSubtitle.erros = {{ mSubtitle.errors | json }}</pre>
+<pre>mSubtitle.value = {{ mSubtitle['value'] }}
+mSubtitle.valid = {{ mSubtitle['valid'] }}
+mSubtitle.invalid = {{ mSubtitle['invalid'] }}
+mSubtitle.dirty = {{ mSubtitle['dirty'] }}
+mSubtitle.pristine = {{ mSubtitle['pristine'] }}
+mSubtitle.touched = {{ mSubtitle['touched'] }}
+mSubtitle.untouched = {{ mSubtitle['untouched'] }}
+mSubtitle.enabled = {{ mSubtitle['enabled'] }}
+mSubtitle.disabled = {{ mSubtitle['disabled'] }}
+mSubtitle.erros = {{ mSubtitle['errors'] | json }}</pre>
                </span>
               </div>
             </div>
